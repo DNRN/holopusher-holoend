@@ -17,6 +17,11 @@ var hashGetEntry = function (hash) {
     return hashHash;
 };
 var getAll = function () {
+    var hashes = query({ Return: {
+            Hashes: true,
+            Entries: true
+        }, Constrain: { EntryTypes: ["hashEntry"] } });
+    return hashes;
 };
 var validateCommit = function (entryName, entry, header, pkg, sources) {
     switch (entryName) {

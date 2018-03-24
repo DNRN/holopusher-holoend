@@ -20,7 +20,11 @@ const hashGetEntry = (hash) => {
 }
 
 const getAll = () => {
-
+    const hashes = query({ Return: {
+        Hashes:true,
+        Entries:true
+      }, Constrain: { EntryTypes: ["hashEntry"] } });
+    return hashes;
 }
 
 const validateCommit = (entryName, entry, header, pkg, sources) => {

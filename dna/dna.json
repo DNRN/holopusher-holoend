@@ -88,6 +88,11 @@
                     "Name": "mine",
                     "CallingType": "json",
                     "Exposure": "public"
+                },
+                {
+                    "Name": "getAll",
+                    "CallingType": "json",
+                    "Exposure": "public"
                 }
             ]
         }
