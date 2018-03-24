@@ -1,0 +1,13 @@
+{
+	"title": "pusherEntry Schema",
+	"type": "object",
+	"properties": {
+		"name": {
+			"type": "string"
+		},
+		"timestamp": {
+			"type": "integer"
+		}
+	},
+    "required": ["name", "timestamp"]
+}
