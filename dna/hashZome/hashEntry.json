@@ -5,12 +5,19 @@
 		"name": {
 			"type": "string"
 		},
+		"seed": {
+			"type": "string"
+		},
+		"agent": {
+			"type": "string"
+		},
 		"timestamp": {
 			"type": "integer"
         },
         "quality": {
             "type": "integer"
-        }
+		}
+		
 	},
-    "required": ["name", "timestamp", "quality"]
+    "required": ["timestamp",  "agent", "seed"]
 }

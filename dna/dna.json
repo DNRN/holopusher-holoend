@@ -62,6 +62,34 @@
                     "Exposure": "public"
                 }
             ]
+        },
+        {
+            "Name": "hashZome",
+            "Description": "provide a hash zome",
+            "CodeFile": "hashZome.js",
+            "RibosomeType": "js",
+            "BridgeFuncs": null,
+            "BridgeTo": "",
+            "Config": null,
+            "Entries": [
+                {
+                    "Name": "hashEntry",
+                    "DataFormat": "json",
+                    "SchemaFile": "hashEntry.json",
+                    "Sharing": "public"
+                },
+                {
+                    "Name": "pushers",
+                    "DataFormat": "links"
+                }
+            ],
+            "Functions": [
+                {
+                    "Name": "mine",
+                    "CallingType": "json",
+                    "Exposure": "public"
+                }
+            ]
         }
     ]
 }

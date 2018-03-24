@@ -3,13 +3,20 @@
 var genesis = function () {
     return true;
 };
-var hashEntryCreate = function (hash) {
+var mine = function (seed) {
+    var hash = {
+        seed: seed,
+        agent: App.Agent.Hash,
+        timestamp: 2323
+    };
     var hashHash = commit('hashEntry', hash);
     return hashHash;
 };
 var hashGetEntry = function (hash) {
-    var hash = get(hash);
-    return hash;
+    var hashHash = get(hash);
+    return hashHash;
+};
+var getAll = function () {
 };
 var validateCommit = function (entryName, entry, header, pkg, sources) {
     switch (entryName) {

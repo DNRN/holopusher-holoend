@@ -4,14 +4,23 @@ const genesis = () => {
     return true;
 };
 
-const hashEntryCreate = (hash) => {
+const mine = (seed) => {
+    const hash = {
+        seed: seed,
+        agent: App.Agent.Hash,
+        timestamp: 2323        
+    };
     const hashHash = commit('hashEntry', hash);
     return hashHash;
 }
 
 const hashGetEntry = (hash) => {
-    const hash = get(hash);
-    return hash;
+    const hashHash = get(hash);
+    return hashHash;
+}
+
+const getAll = () => {
+
 }
 
 const validateCommit = (entryName, entry, header, pkg, sources) => {
