@@ -5,9 +5,12 @@
 		"name": {
 			"type": "string"
 		},
+		"agent": {
+			"type": "string"
+		},
 		"timestamp": {
 			"type": "integer"
 		}
 	},
-    "required": ["name", "timestamp"]
+    "required": ["name", "timestamp", "agent"]
 }

@@ -37,6 +37,26 @@
             "Raw": false,
             "Repeat": 0,
             "Benchmark": true
+        },
+        
+        {
+            "Convey": "We can get pusherEntry",
+            "Zome": "pusherZome",
+            "FnName": "pusherGetFromAgent",
+            "Input": "",
+            "Output": {
+                "name": "Kenny Knivstikker",
+                "timestamp": 12345
+            },
+            "Err": null,
+            "ErrMsg": "",
+            "Regexp": "",
+            "Time": 0,
+            "Wait": 0,
+            "Exposure": "public",
+            "Raw": false,
+            "Repeat": 0,
+            "Benchmark": true
         }
     ],
     "Identity": "",

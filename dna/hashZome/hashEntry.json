@@ -1,0 +1,16 @@
+{
+	"title": "hashEntry Schema",
+	"type": "object",
+	"properties": {
+		"name": {
+			"type": "string"
+		},
+		"timestamp": {
+			"type": "integer"
+        },
+        "quality": {
+            "type": "integer"
+        }
+	},
+    "required": ["name", "timestamp", "quality"]
+}

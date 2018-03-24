@@ -34,6 +34,10 @@
                     "DataFormat": "json",
                     "SchemaFile": "pusherEntry.json",
                     "Sharing": "public"
+                },
+                {
+                    "Name": "pushers",
+                    "DataFormat": "links"
                 }
             ],
             "Functions": [
@@ -44,6 +48,16 @@
                 },
                 {
                     "Name": "pusherGetEntry",
+                    "CallingType": "json",
+                    "Exposure": "public"
+                },
+                {
+                    "Name": "pusherGetFromAgent",
+                    "CallingType": "json",
+                    "Exposure": "public"
+                },
+                {
+                    "Name": "pushersGetAll",
                     "CallingType": "json",
                     "Exposure": "public"
                 }

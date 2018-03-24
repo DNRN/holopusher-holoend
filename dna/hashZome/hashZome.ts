@@ -4,39 +4,20 @@ const genesis = () => {
     return true;
 };
 
-const pusherEntryCreate = (pusher) => {
-    pusher.agent = App.Agent.Hash;
-    const pusherHash = commit('pusherEntry', pusher);
-
-    commit('pushers', {Links:[
-        {Base: App.DNA.Hash, Link: pusherHash, Tag: 'pushersLink' }
-     ]});
-
-    return pusherHash;
+const hashEntryCreate = (hash) => {
+    const hashHash = commit('hashEntry', hash);
+    return hashHash;
 }
 
-const pusherGetEntry = (hash) => {
-    const pusher = get(hash);
-    return pusher;
-}
-
-const pusherGetFromAgent = () => {
-    const pusher = query({ Constrain: { EntryTypes: ["pusherEntry"] } });
-    return pusher;
-}
-
-const pushersGetAll = () => {
-    const pushers = getLinks(App.DNA.Hash, 'pushersLink', { Load: true });
-    debug(pushers);
-    return pushers;
+const hashGetEntry = (hash) => {
+    const hash = get(hash);
+    return hash;
 }
 
 const validateCommit = (entryName, entry, header, pkg, sources) => {
     switch (entryName) {
-        case "pusherEntry":
-        case "pushers":
+        case "hashEntry":
             return true;
-        
         default:
             // invalid entry name
             return false;
@@ -45,7 +26,7 @@ const validateCommit = (entryName, entry, header, pkg, sources) => {
 
 const validatePut = (entryName, entry, header, pkg, sources) => {
     switch (entryName) {
-        case "pusherEntry":
+        case "hashEntry":
             return true;
         default:
             // invalid entry name
@@ -55,7 +36,7 @@ const validatePut = (entryName, entry, header, pkg, sources) => {
 
 const validateMod = (entryName, entry, header, replaces, pkg, sources) => {
     switch (entryName) {
-        case "pusherEntry":
+        case "hashEntry":
             return true;
         default:
             // invalid entry name
@@ -65,7 +46,7 @@ const validateMod = (entryName, entry, header, replaces, pkg, sources) => {
 
 const validateDel = (entryName, hash, pkg, sources) => {
     switch (entryName) {
-        case "pusherEntry":
+        case "hashEntry":
             return true;
         default:
             // invalid entry name
@@ -74,7 +55,7 @@ const validateDel = (entryName, hash, pkg, sources) => {
 }
 
 const validateLink = (linkEntryType, baseHash, links, pkg, sources) => {
-    return true;
+    return false;
 }
 
 const validatePutPkg = (entryName) => {

@@ -3,31 +3,17 @@
 var genesis = function () {
     return true;
 };
-var pusherEntryCreate = function (pusher) {
-    pusher.agent = App.Agent.Hash;
-    var pusherHash = commit('pusherEntry', pusher);
-    commit('pushers', { Links: [
-            { Base: App.DNA.Hash, Link: pusherHash, Tag: 'pushersLink' }
-        ] });
-    return pusherHash;
+var hashEntryCreate = function (hash) {
+    var hashHash = commit('hashEntry', hash);
+    return hashHash;
 };
-var pusherGetEntry = function (hash) {
-    var pusher = get(hash);
-    return pusher;
-};
-var pusherGetFromAgent = function () {
-    var pusher = query({ Constrain: { EntryTypes: ["pusherEntry"] } });
-    return pusher;
-};
-var pushersGetAll = function () {
-    var pushers = getLinks(App.DNA.Hash, 'pushersLink', { Load: true });
-    debug(pushers);
-    return pushers;
+var hashGetEntry = function (hash) {
+    var hash = get(hash);
+    return hash;
 };
 var validateCommit = function (entryName, entry, header, pkg, sources) {
     switch (entryName) {
-        case "pusherEntry":
-        case "pushers":
+        case "hashEntry":
             return true;
         default:
             // invalid entry name
@@ -36,7 +22,7 @@ var validateCommit = function (entryName, entry, header, pkg, sources) {
 };
 var validatePut = function (entryName, entry, header, pkg, sources) {
     switch (entryName) {
-        case "pusherEntry":
+        case "hashEntry":
             return true;
         default:
             // invalid entry name
@@ -45,7 +31,7 @@ var validatePut = function (entryName, entry, header, pkg, sources) {
 };
 var validateMod = function (entryName, entry, header, replaces, pkg, sources) {
     switch (entryName) {
-        case "pusherEntry":
+        case "hashEntry":
             return true;
         default:
             // invalid entry name
@@ -54,7 +40,7 @@ var validateMod = function (entryName, entry, header, replaces, pkg, sources) {
 };
 var validateDel = function (entryName, hash, pkg, sources) {
     switch (entryName) {
-        case "pusherEntry":
+        case "hashEntry":
             return true;
         default:
             // invalid entry name
@@ -62,7 +48,7 @@ var validateDel = function (entryName, hash, pkg, sources) {
     }
 };
 var validateLink = function (linkEntryType, baseHash, links, pkg, sources) {
-    return true;
+    return false;
 };
 var validatePutPkg = function (entryName) {
     return null;
