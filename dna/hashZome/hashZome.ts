@@ -8,9 +8,16 @@ const mine = (seed) => {
     const hash = {
         seed: seed,
         agent: App.Agent.Hash,
-        timestamp: 2323        
+        timestamp: 2323
     };
     const hashHash = commit('hashEntry', hash);
+
+    commit('hashLinks', {
+        Links: [
+            { Base: App.Key.Hash, Link: hashHash, Tag: 'stash' }
+        ]
+    });
+
     return hashHash;
 }
 
@@ -20,15 +27,18 @@ const hashGetEntry = (hash) => {
 }
 
 const getAll = () => {
-    const hashes = query({ Return: {
-        Hashes:true,
-        Entries:true
-      }, Constrain: { EntryTypes: ["hashEntry"] } });
+    const hashes = query({
+        Return: {
+            Hashes: true,
+            Entries: true
+        }, Constrain: { EntryTypes: ["hashEntry"] }
+    });
     return hashes;
 }
 
 const validateCommit = (entryName, entry, header, pkg, sources) => {
     switch (entryName) {
+        case "hashLinks":
         case "hashEntry":
             return true;
         default:
@@ -68,7 +78,7 @@ const validateDel = (entryName, hash, pkg, sources) => {
 }
 
 const validateLink = (linkEntryType, baseHash, links, pkg, sources) => {
-    return false;
+    return true;
 }
 
 const validatePutPkg = (entryName) => {

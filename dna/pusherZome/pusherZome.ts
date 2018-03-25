@@ -10,7 +10,7 @@ const pusherEntryCreate = (pusher) => {
 
     commit('pushers', {Links:[
         {Base: App.DNA.Hash, Link: pusherHash, Tag: 'pushersLink' }
-     ]});
+    ]});
 
     return pusherHash;
 }

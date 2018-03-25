@@ -4,3 +4,4 @@ declare const App: any;
 declare const debug: (any);
 declare const query: (any);
 declare const getLinks: (any);
+declare const HC: any;

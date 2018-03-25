@@ -1,0 +1,16 @@
+{
+	"title": "sellingEntry Schema",
+	"type": "object",
+	"properties": {
+		"price": {
+			"type": "integer"
+		},
+		"pusher": {
+            "type": "string"   
+        },
+        "hash": {
+            "type": "string"
+        }
+	},
+    "required": ["price", "pusher", "hash"]
+}

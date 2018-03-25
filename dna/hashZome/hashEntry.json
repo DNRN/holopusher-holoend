@@ -8,6 +8,9 @@
 		"seed": {
 			"type": "string"
 		},
+		"sale": {
+			"type": "string"
+		},
 		"agent": {
 			"type": "string"
 		},

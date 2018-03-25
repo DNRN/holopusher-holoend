@@ -8,7 +8,7 @@
                 "name": "Kenny Knivstikker",
                 "timestamp": 12345
             },
-            "Output": "%h%",
+            "Output": "%h1%",
             "Err": null,
             "ErrMsg": "",
             "Regexp": "",
@@ -23,8 +23,9 @@
             "Convey": "We can get pusherEntry",
             "Zome": "pusherZome",
             "FnName": "pusherGetEntry",
-            "Input": "%h%",
+            "Input": "%h1%",
             "Output": {
+                "agent": "%agent%",
                 "name": "Kenny Knivstikker",
                 "timestamp": 12345
             },
@@ -38,16 +39,51 @@
             "Repeat": 0,
             "Benchmark": true
         },
-        
         {
-            "Convey": "We can get pusherEntry",
-            "Zome": "pusherZome",
-            "FnName": "pusherGetFromAgent",
-            "Input": "",
-            "Output": {
-                "name": "Kenny Knivstikker",
-                "timestamp": 12345
+            "Convey": "Test hash hashing",
+            "Zome": "hashZome",
+            "FnName": "mine",
+            "Input": "72ed754f-a875-ae7b-96e5-370b249bacce",
+            "Output": "%h1%",
+            "Err": null,
+            "ErrMsg": "",
+            "Regexp": "",
+            "Time": 0,
+            "Wait": 0,
+            "Exposure": "public",
+            "Raw": false,
+            "Repeat": 0,
+            "Benchmark": true
+        },
+        {
+            "Convey": "Test selling hash",
+            "Zome": "sellingZome",
+            "FnName": "sell",
+            "Input": {
+                "price": 23,
+                "hash": "%h1%"
             },
+            "Output": "%h2%",
+            "Err": null,
+            "ErrMsg": "",
+            "Regexp": "",
+            "Time": 0,
+            "Wait": 0,
+            "Exposure": "public",
+            "Raw": false,
+            "Repeat": 0,
+            "Benchmark": true
+        },
+        {
+            "Convey": "Test market",
+            "Zome": "sellingZome",
+            "FnName": "getMarket",
+            "Input": "",
+            "Output": [{
+                "price": 23,
+                "pusher": "%h6%",
+                "hash": "%h4%"
+            }],
             "Err": null,
             "ErrMsg": "",
             "Regexp": "",

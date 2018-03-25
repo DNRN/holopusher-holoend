@@ -81,6 +81,10 @@
                 {
                     "Name": "pushers",
                     "DataFormat": "links"
+                },
+                {
+                    "Name": "hashLinks",
+                    "DataFormat": "links"
                 }
             ],
             "Functions": [
@@ -91,6 +95,39 @@
                 },
                 {
                     "Name": "getAll",
+                    "CallingType": "json",
+                    "Exposure": "public"
+                }
+            ]
+        },
+        {
+            "Name": "sellingZome",
+            "Description": "provide a selling zome",
+            "CodeFile": "sellingZome.js",
+            "RibosomeType": "js",
+            "BridgeFuncs": null,
+            "BridgeTo": "",
+            "Config": null,
+            "Entries": [
+                {
+                    "Name": "sellingEntry",
+                    "DataFormat": "json",
+                    "SchemaFile": "sellingEntry.json",
+                    "Sharing": "public"
+                },
+                {
+                    "Name": "market",
+                    "DataFormat": "links"
+                }
+            ],
+            "Functions": [
+                {
+                    "Name": "sell",
+                    "CallingType": "json",
+                    "Exposure": "public"
+                },
+                {
+                    "Name": "getMarket",
                     "CallingType": "json",
                     "Exposure": "public"
                 }
