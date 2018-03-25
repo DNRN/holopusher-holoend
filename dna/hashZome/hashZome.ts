@@ -36,6 +36,10 @@ const getAll = () => {
     return hashes;
 }
 
+const getStash = () => {
+    return getLinks(App.Key.Hash, 'stash',  { Load: true });
+}
+
 const validateCommit = (entryName, entry, header, pkg, sources) => {
     switch (entryName) {
         case "hashLinks":

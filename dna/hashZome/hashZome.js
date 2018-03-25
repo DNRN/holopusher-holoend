@@ -30,6 +30,9 @@ var getAll = function () {
     });
     return hashes;
 };
+var getStash = function () {
+    return getLinks(App.Key.Hash, 'stash', { Load: true });
+};
 var validateCommit = function (entryName, entry, header, pkg, sources) {
     switch (entryName) {
         case "hashLinks":

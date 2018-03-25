@@ -14,14 +14,14 @@ var sell = function (sellOrder) {
     if (pushers.length === 0) {
         return null;
     }
-    var market = getLinks(App.DNA.Hash, 'sellingLink', { Load: true });
-    debug(market);
-    var isAdded = market.filter(function (h) {
-        return h.Entry.Hash == sellOrder.Hash;
-    });
-    if (isAdded.length > 0) {
-        return null;
-    }
+    // const market: any[] = getLinks(App.DNA.Hash, 'sellingLink', { Load: true });
+    // debug(market);
+    // const isAdded = market.filter(h => {
+    //     return h.Entry.Hash == sellOrder.Hash;
+    // });
+    // if (isAdded.length > 0) {
+    //     return null;
+    // }
     var sellingEntry = {};
     sellingEntry.pusher = pushers[0].Hash;
     sellingEntry.hash = sellOrder.hash;

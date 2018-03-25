@@ -97,6 +97,11 @@
                     "Name": "getAll",
                     "CallingType": "json",
                     "Exposure": "public"
+                },
+                {
+                    "Name": "getStash",
+                    "CallingType": "json",
+                    "Exposure": "public"
                 }
             ]
         },

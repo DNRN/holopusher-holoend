@@ -16,14 +16,14 @@ const sell = (sellOrder) => {
         return null;
     }
 
-    const market: any[] = getLinks(App.DNA.Hash, 'sellingLink', { Load: true });
-    debug(market);
-    const isAdded = market.filter(h => {
-        return h.Entry.Hash == sellOrder.Hash;
-    });
-    if (isAdded.length > 0) {
-        return null;
-    }
+    // const market: any[] = getLinks(App.DNA.Hash, 'sellingLink', { Load: true });
+    // debug(market);
+    // const isAdded = market.filter(h => {
+    //     return h.Entry.Hash == sellOrder.Hash;
+    // });
+    // if (isAdded.length > 0) {
+    //     return null;
+    // }
 
     let sellingEntry: any = {};
     sellingEntry.pusher = pushers[0].Hash;
